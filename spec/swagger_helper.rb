@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require "spec_helper"
 
 RSpec.configure do |config|
@@ -21,9 +19,11 @@ RSpec.configure do |config|
               id: { type: :integer, description: "Unique identifier for course" },
               title: { type: :string, description: "Title of course" },
               description: { type: :string, description: "Description of course" },
-              created_at: { type: :string, format: "date-time", description: "Timestamp when the competency was created" },
-              updated_at: { type: :string, format: "date-time", description: "Timestamp when the competency was created" },
-            },
+              created_at: { type: :string, format: "date-time",
+                            description: "Timestamp when the competency was created" },
+              updated_at: { type: :string, format: "date-time",
+                            description: "Timestamp when the competency was created" }
+            }
           },
           CourseWithRelations: {
             type: :object,
@@ -31,14 +31,16 @@ RSpec.configure do |config|
               id: { type: :integer, description: "Unique identifier for course" },
               title: { type: :string, description: "Title of course" },
               description: { type: :string, description: "Description of course" },
-              created_at: { type: :string, format: "date-time", description: "Timestamp when the competency was created" },
-              updated_at: { type: :string, format: "date-time", description: "Timestamp when the competency was created" },
+              created_at: { type: :string, format: "date-time",
+                            description: "Timestamp when the competency was created" },
+              updated_at: { type: :string, format: "date-time",
+                            description: "Timestamp when the competency was created" },
               author: { "$ref" => "#/components/schemas/Author" },
               competencies: {
                 type: :array,
                 items: { "$ref" => "#/components/schemas/Competency" }
               }
-            },
+            }
           },
           Author: {
             type: :object,
@@ -48,16 +50,18 @@ RSpec.configure do |config|
               email: { type: :string, description: "Email of author" },
               created_at: { type: :string, format: "date-time", description: "Timestamp when the author was created" },
               updated_at: { type: :string, format: "date-time", description: "Timestamp when the author was updated" }
-            },
+            }
           },
           Competency: {
             type: :object,
             properties: {
               id: { type: :integer, description: "Unique identifier for competency" },
               name: { type: :string, description: "Name of competency" },
-              created_at: { type: :string, format: "date-time", description: "Timestamp when the competency was created" },
-              updated_at: { type: :string, format: "date-time", description: "Timestamp when the competency was updated" }
-            },
+              created_at: { type: :string, format: "date-time",
+                            description: "Timestamp when the competency was created" },
+              updated_at: { type: :string, format: "date-time",
+                            description: "Timestamp when the competency was updated" }
+            }
           }
         }
       },

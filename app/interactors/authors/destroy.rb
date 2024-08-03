@@ -14,10 +14,12 @@ class Authors::Destroy
   def reassign_courses
     new_author = Author.where.not(id: author.id).sample
 
+    # rubocop:disable Rails/SkipsModelValidations
     if new_author
       author.courses.update_all(author_id: new_author.id)
     else
       context.fail!(message: "Can't delete last author")
     end
+    # rubocop:enable Rails/SkipsModelValidations
   end
 end
