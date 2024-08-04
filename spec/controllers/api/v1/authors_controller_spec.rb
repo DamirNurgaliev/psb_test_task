@@ -44,7 +44,7 @@ describe "Authors API", type: :request do
       consumes "application/json"
       produces "application/json"
       parameter name: :author, in: :body, schema: {
-        "$ref" => "#/components/schemas/Author"
+        "$ref" => "#/components/schemas/NewAuthor"
       }
 
       response(201, "created") do
@@ -97,7 +97,7 @@ describe "Authors API", type: :request do
       consumes "application/json"
       produces "application/json"
       parameter name: :author, in: :body, schema: {
-        "$ref" => "#/components/schemas/Author"
+        "$ref" => "#/components/schemas/NewAuthor"
       }
 
       response(200, "successful") do

@@ -42,6 +42,14 @@ RSpec.configure do |config|
               }
             }
           },
+          NewCourse: {
+            type: :object,
+            properties: {
+              title: { type: :string, description: "Title of course", example: "Test Course Title" },
+              description: { type: :string, description: "Description of course", example: "Test desc" },
+              author_id: { type: :integer, description: "Id of author", example: 1 }
+            }
+          },
           Author: {
             type: :object,
             properties: {
@@ -50,6 +58,13 @@ RSpec.configure do |config|
               email: { type: :string, description: "Email of author" },
               created_at: { type: :string, format: "date-time", description: "Timestamp when the author was created" },
               updated_at: { type: :string, format: "date-time", description: "Timestamp when the author was updated" }
+            }
+          },
+          NewAuthor: {
+            type: :object,
+            properties: {
+              name: { type: :string, description: "Name of author", example: "TestName" },
+              email: { type: :string, description: "Email of author", example: "test@mail.ru" }
             }
           },
           Competency: {
@@ -61,6 +76,12 @@ RSpec.configure do |config|
                             description: "Timestamp when the competency was created" },
               updated_at: { type: :string, format: "date-time",
                             description: "Timestamp when the competency was updated" }
+            }
+          },
+          NewCompetency: {
+            type: :object,
+            properties: {
+              name: { type: :string, description: "Name of competency", example: "Test Competency 1" }
             }
           }
         }

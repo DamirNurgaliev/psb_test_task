@@ -47,7 +47,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Author"
+                "$ref": "#/components/schemas/NewAuthor"
               }
             }
           }
@@ -104,7 +104,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Author"
+                "$ref": "#/components/schemas/NewAuthor"
               }
             }
           }
@@ -164,7 +164,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Competency"
+                "$ref": "#/components/schemas/NewCompetency"
               }
             }
           }
@@ -221,7 +221,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Competency"
+                "$ref": "#/components/schemas/NewCompetency"
               }
             }
           }
@@ -281,7 +281,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Course"
+                "$ref": "#/components/schemas/NewCourse"
               }
             }
           }
@@ -338,7 +338,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Course"
+                "$ref": "#/components/schemas/NewCourse"
               }
             }
           }
@@ -422,6 +422,26 @@
           }
         }
       },
+      "NewCourse": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "description": "Title of course",
+            "example": "Test Course Title"
+          },
+          "description": {
+            "type": "string",
+            "description": "Description of course",
+            "example": "Test desc"
+          },
+          "author_id": {
+            "type": "integer",
+            "description": "Id of author",
+            "example": 1
+          }
+        }
+      },
       "Author": {
         "type": "object",
         "properties": {
@@ -449,6 +469,21 @@
           }
         }
       },
+      "NewAuthor": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Name of author",
+            "example": "TestName"
+          },
+          "email": {
+            "type": "string",
+            "description": "Email of author",
+            "example": "test@mail.ru"
+          }
+        }
+      },
       "Competency": {
         "type": "object",
         "properties": {
@@ -469,6 +504,16 @@
             "type": "string",
             "format": "date-time",
             "description": "Timestamp when the competency was updated"
+          }
+        }
+      },
+      "NewCompetency": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Name of competency",
+            "example": "Test Competency 1"
           }
         }
       }

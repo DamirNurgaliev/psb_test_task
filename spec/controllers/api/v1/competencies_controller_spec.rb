@@ -45,7 +45,7 @@ describe "Competencies API", type: :request do
       consumes "application/json"
       produces "application/json"
       parameter name: :competency, in: :body, schema: {
-        "$ref" => "#/components/schemas/Competency"
+        "$ref" => "#/components/schemas/NewCompetency"
       }
 
       response(201, "created") do
@@ -96,7 +96,7 @@ describe "Competencies API", type: :request do
       consumes "application/json"
       produces "application/json"
       parameter name: :competency, in: :body, schema: {
-        "$ref" => "#/components/schemas/Competency"
+        "$ref" => "#/components/schemas/NewCompetency"
       }
 
       response(200, "successful") do

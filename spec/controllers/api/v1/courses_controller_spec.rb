@@ -78,7 +78,7 @@ describe "Courses API", type: :request do
       consumes "application/json"
       produces "application/json"
       parameter name: :course, in: :body, schema: {
-        "$ref" => "#/components/schemas/Course"
+        "$ref" => "#/components/schemas/NewCourse"
       }
 
       response(201, "created") do
@@ -134,7 +134,7 @@ describe "Courses API", type: :request do
       consumes "application/json"
       produces "application/json"
       parameter name: :course, in: :body, schema: {
-        "$ref" => "#/components/schemas/Course"
+        "$ref" => "#/components/schemas/NewCourse"
       }
 
       response(200, "successful") do
