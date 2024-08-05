@@ -47,7 +47,8 @@ RSpec.configure do |config|
             properties: {
               title: { type: :string, description: "Title of course", example: "Test Course Title" },
               description: { type: :string, description: "Description of course", example: "Test desc" },
-              author_id: { type: :integer, description: "Id of author", example: 1 }
+              author_id: { type: :integer, description: "Id of author", example: 1 },
+              competency_ids: { type: :array, description: "Ids of competencies of this course", example: [1, 2] }
             }
           },
           Author: {

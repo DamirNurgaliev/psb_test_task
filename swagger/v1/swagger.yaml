@@ -439,6 +439,14 @@
             "type": "integer",
             "description": "Id of author",
             "example": 1
+          },
+          "competency_ids": {
+            "type": "array",
+            "description": "Ids of competencies of this course",
+            "example": [
+              1,
+              2
+            ]
           }
         }
       },

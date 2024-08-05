@@ -82,12 +82,21 @@ describe "Courses API", type: :request do
       }
 
       response(201, "created") do
-        let(:course) { { title: "New Course", description: "Course description", author_id: author.id } }
+        let(:course) do
+          {
+            title: "New Course",
+            description: "Course description",
+            author_id: author.id,
+            competency_ids: [competency1.id]
+          }
+        end
 
         run_test! do |_response|
           expect(response_data["title"]).to eq("New Course")
           expect(response_data["description"]).to eq("Course description")
-          expect(response_data["author_id"]).to eq(author.id)
+          expect(response_data["author"]["id"]).to eq(author.id)
+          expect(response_data["competencies"].size).to eq(1)
+          expect(response_data["competencies"][0]["name"]).to eq("Competency 1")
         end
       end
 
